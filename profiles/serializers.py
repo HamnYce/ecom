@@ -2,7 +2,14 @@ from rest_framework import serializers
 from .models import UserProfile
 
 
-class UserProfileSerializer(serializers.ModelSerializer):
+class ReadUserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = '__all__'
+        exclude = ['user']
+
+
+#
+class WriteUserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        exclude = ['user', 'gender']
