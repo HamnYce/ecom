@@ -9,18 +9,13 @@ from users.models import User
 
 
 class UserProfile(models.Model):
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, to_field='email', on_delete=models.DO_NOTHING, null=False,
+        primary_key=True
+    )
     username = models.CharField(
         max_length=150, unique=True, db_index=True,
-        validators=[UnicodeUsernameValidator], primary_key=True,
+        validators=[UnicodeUsernameValidator],
         null=False
     )
-    email = models.OneToOneField(
-        settings.AUTH_USER_MODEL, to_field='email', name='email', on_delete=models.DO_NOTHING, null=False
-    )
     gender = models.BooleanField(default=False)
-
-    def save(self, *args, **kwargs):
-        user = get_user_model().objects.filter(email=self.email).first()
-        user.has_profile = True
-        user.save()
-        super().save(*args, **kwargs)
