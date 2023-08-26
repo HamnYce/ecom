@@ -9,17 +9,13 @@
 - Django 4.2.4
 - django-extensions 3.2.3
 - djangorestframework 3.14.0
-- drfpasswordless 1.5.8
-- factory-boy 3.3.0
-- Faker 19.3.0
-- mysqlclient 2.2.0
-- pip 23.2.1
-- psycopg2 2.9.7
-- PyMySQL 1.1.0
-
-## Quick Tips
-
-### Creating and setting the environment
+- drfpasswordless     1.5.8
+- factory-boy         3.3.0
+- Faker               19.3.0
+- mysqlclient         2.2.0
+- pip                 23.2.1
+- psycopg2            2.9.7
+- PyMySQL             1.1.0
 
 ```bash
 python -m venv .env
