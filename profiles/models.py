@@ -10,7 +10,7 @@ from users.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, to_field='email', on_delete=models.DO_NOTHING, null=False,
+        settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, null=False,
         primary_key=True
     )
     username = models.CharField(

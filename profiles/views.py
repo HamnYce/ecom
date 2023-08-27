@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
-from rest_framework import permissions
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 import rest_framework.status as status
 from .serializers import (ReadUserProfileSerializer,
@@ -13,7 +13,7 @@ from .permissions import HasProfileOrReadOnly
 
 
 class UserProfileListApiView(APIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnly]
     pagination_class = UserProfilePaginator()
 
     # list user profiles
@@ -46,8 +46,7 @@ class UserProfileListApiView(APIView):
 
 
 class UserProfileDetailApiView(APIView):
-    permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly, HasProfileOrReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnly, HasProfileOrReadOnly]
 
     # get specific user profile with username
     def get(self, request, *args, **kwargs):

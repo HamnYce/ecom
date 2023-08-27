@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'drfpasswordless',
     'django_extensions',
     'users',
-    'profiles'
+    'profiles',
+    'products',
 ]
 
 AUTH_USER_MODEL = 'users.User'
