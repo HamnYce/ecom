@@ -18,8 +18,10 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    class Meta:
+        unique_together = ('owner', 'name')
     owner = models.ForeignKey(UserProfile, to_field='username',
-                              on_delete=models.SET_NULL, null=True)
+                              on_delete=models.CASCADE)
     name = models.CharField(max_length=150)
     description = models.TextField()
     category = models.ForeignKey(
