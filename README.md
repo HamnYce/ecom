@@ -37,12 +37,12 @@ python manage.py
 
 ## _Api endpoints_ IN COMPLETE
 
-### _users_ DONE:
+### _users_ DONE
 
 - authtoken verification (email, can add mobile) DONE
 - signin
 
-### _profiles_
+### _profiles_ DONE
 
 - GET list (paginated) DONE
 - POST create (to complete registration) DONE
@@ -51,12 +51,13 @@ python manage.py
 
 ### _products_ (POST requires profile)
 
-- GET list (paginated)
-- GET list[specific user’s products]
-- GET list[user specific search]
+- GET list (paginated) DONE
+- GET list [specific user’s products]
+- GET list [user specific search]
 - GET (filter page category) category table
-- GET detail [specific name]
-- POST create
+- GET detail [specific user, specific name]
+- POST create DONE
+- PUT update
 
 ### Following
 
@@ -81,6 +82,12 @@ python manage.py
 - Gender
 - DoB
 - Rating
+
+## Category
+
+**Fields**:
+
+- Name
 
 ## Product
 
