@@ -32,7 +32,7 @@ class UserProfileListApiView(APIView):
     # create new profile (for new user)
 
     def post(self, request: Request, *args, **kwargs):
-        data = request.data
+        data = request.POST.dict()
         serializer = ReadUserProfileSerializer(data=data)
         if request.user.has_profile:
             return Response({'reason': 'user already has profile'}, status=status.HTTP_400_BAD_REQUEST)
