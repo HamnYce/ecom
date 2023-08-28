@@ -18,4 +18,4 @@ class UserProfile(models.Model):
         validators=[UnicodeUsernameValidator],
         null=False
     )
-    gender = models.BooleanField(default=False)
+    gender = models.BooleanField(null=False)
