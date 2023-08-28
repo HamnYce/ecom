@@ -7,8 +7,8 @@ from .paginators import ProductPaginator
 
 
 class ProductListApiView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly, HasProfileOrReadOnly]
-    pagination_class = ProductPaginator
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    pagination_class = ProductPaginator()
 
     "returns list of products, will check kwargs for filter"
     # TODO: decide on list of acceptable filter params
@@ -27,7 +27,7 @@ class ProductListApiView(APIView):
 
 
 class ProductDetailApiView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly, HasProfileOrReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get(self, request, *args, **kwargs):
         pass
