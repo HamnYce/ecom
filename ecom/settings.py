@@ -53,7 +53,8 @@ AUTH_USER_MODEL = 'users.User'
 
 PASSWORDLESS_AUTH = {
     'PASSWORDLESS_AUTH_TYPES': ['EMAIL'],
-    'PASSWORDLESS_EMAIL_NOREPLY_ADDRESS': 'noreply@example.com'
+    'PASSWORDLESS_EMAIL_NOREPLY_ADDRESS': 'noreply@example.com',
+    'PASSWORDLESS_TOKEN_EXPIRE_TIME': 24 * 60 * 60,  # 24 hours in seconds
 }
 
 MIDDLEWARE = [
