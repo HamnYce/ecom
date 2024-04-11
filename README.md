@@ -1,4 +1,5 @@
 # eCOM
+(E-Commerce Website written in Django For Learning Reasons)
 
 ## Request/Response Flow
 
